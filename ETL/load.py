@@ -6,13 +6,13 @@ from pathlib import Path
 def merge_df(price_df, load_df, wind_df, solar_df):
 
     # Merge data into a single df
-    merged_df = pd.merge(price_df, load_df, on=['Date', 'Hour_Ending'], how='outer') # merge first two df
-    merged_df = pd.merge(merged_df, wind_df, on=['Date', 'Hour_Ending'], how='outer') # merge third df
-    merged_df = pd.merge(merged_df, solar_df, on=['Date', 'Hour_Ending'], how='outer') # merge fourth df
+    merged_df = pd.merge(price_df, load_df, on=['Date', 'Hour'], how='outer') # merge first two df
+    merged_df = pd.merge(merged_df, wind_df, on=['Date', 'Hour'], how='outer') # merge third df
+    merged_df = pd.merge(merged_df, solar_df, on=['Date', 'Hour'], how='outer') # merge fourth df
 
     # Convert 24th hour to 0th hour and then convert into an int
-    merged_df['Hour_Ending'] = merged_df['Hour_Ending'].replace(24.0, 0.0)
-    merged_df['Hour_Ending'] = merged_df['Hour_Ending'].apply(np.int64)
+    merged_df['Hour'] = merged_df['Hour'].replace(24.0, 0.0)
+    merged_df['Hour'] = merged_df['Hour'].apply(np.int64)
 
     return merged_df
 
