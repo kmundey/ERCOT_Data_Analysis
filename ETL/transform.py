@@ -1,5 +1,3 @@
-# describe what this file does
-
 ### IMPORT LIBRARIES ###
 import pandas as pd
 from itertools import product
