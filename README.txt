@@ -17,7 +17,7 @@
 ### Data Description ###
 ########################
 
-a. Price Data: Electrical bus prices across ERCOT regions
+a. Price Data: Electrical bus prices across ERCOT regions ($/MWh)
 
 Description: 
 
